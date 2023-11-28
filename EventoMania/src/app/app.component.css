@@ -1,0 +1,36 @@
+body {
+    font-family: 'Arial', sans-serif;
+    padding: 20px;
+    background: linear-gradient(white, blue);
+  }
+  
+  label {
+    display: block;
+    margin-bottom: 10px;
+  }
+  
+  select {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 20px;
+  }
+  
+  h1, h2 {
+    color: #007BFF;
+    font-size: 50px;
+  }
+  
+  div {
+    border: 1px solid #ccc;
+    padding: 10px;
+    margin-bottom: 20px;
+  }
+  
+  b {
+    color: #007BFF;
+  }
+  
+  p {
+    margin: 5px 0;
+  }
+  

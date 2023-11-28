@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Practica</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+    integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <link rel="stylesheet" href="app.component.css">
+</head>
+
+<body class="bg-light">
+
+  <div class="container mt-4">
+    <div class="form-group">
+      <label for="direccionSelector">Selecciona una dirección:</label>
+      <select id="direccionSelector" class="form-control" [(ngModel)]="direccionSeleccionada"
+        (change)="filtrarEventosPorDireccion()">
+        <option value="">-- Seleccione una dirección --</option>
+        <option *ngFor="let direccion of direccionesUnicas" [value]="direccion">{{ direccion }}</option>
+      </select>
+    </div>
+
+    <div class="card-deck">
+      <div class="card">
+        <div class="card-body">
+          <h1 class="card-title text-primary">Eventos próximos</h1>
+          <div *ngFor="let evento of EventosProximos()">
+            <div class="card mb-3">
+              <div class="card-body">
+                <h5 class="card-title">{{evento.titulo}}</h5>
+                <p class="card-text">{{evento.artista}}</p>
+                <p class="card-text">{{evento.direccion}}</p>
+                <p class="card-text">{{evento.fecha}}</p>
+                <p class="card-text font-weight-bold">{{evento.precio}}</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-body">
+          <h2 class="card-title text-primary">Eventos pasados</h2>
+          <div *ngFor="let evento of EventosPasados()">
+            <div class="card mb-3">
+              <div class="card-body">
+                <h5 class="card-title">{{evento.titulo}}</h5>
+                <p class="card-text">{{evento.artista}}</p>
+                <p class="card-text">{{evento.direccion}}</p>
+                <p class="card-text">{{evento.fecha}}</p>
+                <p class="card-text font-weight-bold">{{evento.precio}}</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+    integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+    crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+    integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+    crossorigin="anonymous"></script>
+
+</body>
+
+</html>
